@@ -45,4 +45,4 @@ contracts; only the lead changes it.
 | catalog | `data/`, `tests/test_catalog.py` | @atiladeokegab [Zeus] | #5 |
 | web | `web/` | @atiladeokegab [Zeus] | #4, #12, #13 |
 | design | `docs/design.md`, `docs/mockup/` | @atiladeokegab [Zeus] | #1 |
-| submission | `docs/pitch.md`, `docs/demo.md`, `docs/architecture/` | @atiladeokegab [Hermes], @atiladeokegab | #6, #7 |
+| submission | `docs/pitch.md`, `docs/demo.md`, `docs/architecture/` | @atiladeokegab [Hermes], @atiladeokegab [Zeus] | #6, #7 |
