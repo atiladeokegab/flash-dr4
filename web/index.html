@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <div class="wordmark">Shop Assistant</div>
+    <h1>Find your next laptop</h1>
+    <p class="sub">Six laptops, one assistant. Ask in plain words and we'll point you to the right one.</p>
+  </header>
+
+  <main class="layout">
+    <section class="catalog" aria-labelledby="grid-heading">
+      <h2 id="grid-heading">6 laptops</h2>
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <aside class="chat" aria-labelledby="chat-title">
+      <h2 id="chat-title">Ask the assistant</h2>
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" type="text" placeholder="Ask about these laptops…" autocomplete="off">
+        <button class="pill" type="submit">Send</button>
+      </form>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
