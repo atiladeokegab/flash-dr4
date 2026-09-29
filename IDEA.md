@@ -44,5 +44,5 @@ contracts; only the lead changes it.
 | assistant | `app/assistant/`, `tests/assistant/` | — | — |
 | catalog | `data/`, `tests/test_catalog.py` | — | — |
 | web | `web/` | — | — |
-| design | `docs/design.md`, `docs/mockup/` | — | — |
+| design | `docs/design.md`, `docs/mockup/` | @atiladeokegab [Zeus] | #1 |
 | submission | `docs/pitch.md`, `docs/demo.md`, `docs/architecture/` | — | — |
