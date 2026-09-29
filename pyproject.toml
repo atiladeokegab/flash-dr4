@@ -1,0 +1,17 @@
+[project]
+name = "shop-assistant"
+version = "0.1.0"
+description = "Shop Assistant: a laptop product page with an AI chat that recommends from the catalog."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "anthropic",
+    "python-dotenv",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "httpx",
+]
