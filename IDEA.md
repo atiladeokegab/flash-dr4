@@ -42,7 +42,7 @@ contracts; only the lead changes it.
 |---|---|---|---|
 | core | `pyproject.toml`, `uv.lock`, `app/__init__.py`, `app/main.py`, `app/contract.py`, `tests/__init__.py`, `tests/test_api.py` | @atiladeokegab [Zeus] | #2 |
 | assistant | `app/assistant/`, `tests/assistant/` | @atiladeokegab [Zeus] | #3, #10, #11 |
-| catalog | `data/`, `tests/test_catalog.py` | @atiladeokegab [Prometheus] | #5 |
+| catalog | `data/`, `tests/test_catalog.py` | @atiladeokegab [Zeus] | #5 |
 | web | `web/` | @atiladeokegab [Zeus] | #4, #12, #13 |
 | design | `docs/design.md`, `docs/mockup/` | @atiladeokegab [Zeus] | #1 |
 | submission | `docs/pitch.md`, `docs/demo.md`, `docs/architecture/` | @atiladeokegab [Hermes], @atiladeokegab | #6, #7 |
