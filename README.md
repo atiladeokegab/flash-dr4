@@ -237,3 +237,5 @@ Every one of these happened for real while this kit was tested.
 ![C4 container](docs/architecture/c4_container.png)
 
 ![C4 component](docs/architecture/c4_component.png)
+
+![C4 code](docs/architecture/c4_code.png)
