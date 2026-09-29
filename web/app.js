@@ -53,17 +53,65 @@ async function loadProducts() {
   }
 }
 
-// Empty chat state; sending to /chat is #13.
+// Chat: POST /chat with history; replies highlight product_ids in the grid (docs/design.md §States).
+let history = [];
+
 function renderChatEmpty() {
   const box = $("#messages");
   box.replaceChildren(el("p", "hint", "Not sure which one? Ask me. For example:"));
   for (const q of [Q_TRAVEL, Q_BATTERY]) {
     const chip = el("button", "chip", q);
-    chip.onclick = () => { $("#chat-input").value = q; };
+    chip.type = "button";
+    chip.onclick = () => send(q);
     box.append(chip);
   }
 }
 
-$("#chat-form").onsubmit = (e) => e.preventDefault();
+function setBusy(busy) {
+  $("#chat-input").disabled = busy;
+  $("#chat-form button").disabled = busy;
+}
+
+async function send(text, echo = true) {
+  const box = $("#messages");
+  if (box.querySelector(".hint")) box.replaceChildren();
+  if (echo) box.append(el("p", "bubble user", text));
+  const thinking = el("p", "bubble bot", "Thinking…");
+  box.append(thinking);
+  setBusy(true);
+  try {
+    const res = await fetch("/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, history: history.slice(-10) }),
+    });
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    thinking.textContent = data.reply;
+    if (!data.product_ids.length) box.append(el("p", "caption", "No laptop on this page matches that."));
+    history.push({ role: "user", content: text }, { role: "assistant", content: data.reply });
+    if (products.length) renderGrid("ready", data.product_ids);
+    const first = data.product_ids.length && document.querySelector(`.card[data-id="${CSS.escape(data.product_ids[0])}"]`);
+    if (first && matchMedia("(max-width: 960px)").matches) first.scrollIntoView({ behavior: "smooth", block: "center" });
+  } catch {
+    thinking.className = "bubble bot error";
+    thinking.textContent = "Sorry, the assistant didn't answer. Try again.";
+    const retry = el("button", "pill secondary", "Try again");
+    retry.type = "button";
+    retry.onclick = () => { thinking.remove(); retry.remove(); send(text, false); };
+    box.append(retry);
+  } finally {
+    setBusy(false);
+    $("#chat-input").focus();
+  }
+}
+
+$("#chat-form").onsubmit = (e) => {
+  e.preventDefault();
+  const text = $("#chat-input").value.trim();
+  if (!text || $("#chat-input").disabled) return;
+  $("#chat-input").value = "";
+  send(text);
+};
 renderChatEmpty();
 loadProducts();
