@@ -1,14 +1,14 @@
-# <Event name>
+# Flash Hackathon: AI Web Integrations
 
-<One-paragraph brief: what we're building and for which track.>
+We're building Shop Assistant, in the Conversational Commerce track: a product page with a chat widget. Ask about the laptops on the page and an AI assistant (Claude Haiku 4.5, with an offline stub) answers from the catalog and highlights the products it recommends.
 
-Official rules: <link>
+Official rules: the event brief handed out at kickoff (no public link): a working AI capability embedded in a web page, using existing APIs; a live prototype and a 60-second pitch
 
-Smoke: `<the one command that proves the product works: tests plus one end-to-end run>`
+Smoke: `uv run pytest -q`
 
 The product that ships is `main`: the last commit that passed the smoke check.
 
-Board: <link to the event's GitHub Project board>
+Board: https://github.com/users/atiladeokegab/projects/7
 
 ## Deadlines
 
@@ -17,18 +17,20 @@ date, so this UTC column is the clock, never the milestone.
 
 | Deadline | Event time | UTC |
 |---|---|---|
-| code freeze | <YYYY-MM-DDTHH:MM±HH:MM> | <YYYY-MM-DDTHH:MMZ> |
-| submit | <YYYY-MM-DDTHH:MM±HH:MM> | <YYYY-MM-DDTHH:MMZ> |
+| design | 2026-09-29T18:40+01:00 | 2026-09-29T17:40Z |
+| build start | 2026-09-29T18:45+01:00 | 2026-09-29T17:45Z |
+| core | 2026-09-29T18:55+01:00 | 2026-09-29T17:55Z |
+| code freeze | 2026-09-29T19:15+01:00 | 2026-09-29T18:15Z |
+| submit | 2026-09-29T19:25+01:00 | 2026-09-29T18:25Z |
 
 ## Judging criteria
 
-- <criterion>: <weight>
+- Not published in the brief. We aim at: the AI feature really works, obvious user value, a clear 60-second pitch.
 
 ## Team
 
 | Name | GitHub | Role |
 |---|---|---|
-| <name> | @<handle> | <role> |
+| Atilade | @atiladeokegab | lead, designer, backend, AI/LLM API integration, infra |
 
-The lead's agents: <e.g. "Zeus plans, reviews and merges; Prometheus builds">. When this page
-or a review says "the lead", it may be one of them acting for the lead.
+The lead's agents: Zeus, Prometheus, Hermes. When this page or a review says "the lead", it may be one of them acting for the lead.

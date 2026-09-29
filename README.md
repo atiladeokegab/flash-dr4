@@ -1,13 +1,13 @@
-# <Project name>
+# Shop Assistant
 
-<One paragraph: what we're building and who it's for.>
+We're building Shop Assistant, in the Conversational Commerce track: a product page with a chat widget. Ask about the laptops on the page and an AI assistant (Claude Haiku 4.5, with an offline stub) answers from the catalog and highlights the products it recommends.
 
 What we're building and who owns which part: [IDEA.md](IDEA.md). Deadlines, rules and
 the team: [HACKATHON.md](HACKATHON.md). Who is doing what, live: the board linked in HACKATHON.md.
 
 ## Quick start
 
-1. `gh repo clone <this repo>`
+1. `gh repo clone atiladeokegab/flash-dr4`
 2. Open your AI tool (Claude Code, Codex, Cursor, Copilot…) in the folder.
 3. Tell it: *"Read AGENTS.md, then pick up my issue."*
 
@@ -232,4 +232,8 @@ Every one of these happened for real while this kit was tested.
 
 ## Architecture
 
-<!-- the lead adds the C4 diagrams here -->
+![C4 context](docs/architecture/c4_context.png)
+
+![C4 container](docs/architecture/c4_container.png)
+
+![C4 component](docs/architecture/c4_component.png)
