@@ -10,12 +10,6 @@ button, input { font: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-.statebar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 8px 16px;
-  background: var(--panel); border-bottom: 1px solid var(--border); font-size: 13px; }
-.statebar span { font-weight: 700; margin-right: 4px; }
-.statebar button { border: 1px solid var(--border); background: var(--bg); color: var(--ink);
-  border-radius: 999px; padding: 4px 10px; cursor: pointer; }
-.statebar button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
 
 .top { max-width: 1280px; margin: 0 auto; padding: 40px 24px 8px; }
 .wordmark { font-weight: 700; font-size: 15px; margin-bottom: 32px; }
